@@ -54,7 +54,7 @@ class Inventory extends React.Component {
 }
 
 Inventory.propTypes = {
-  fishes: PropTypes.array,
+  fishes: PropTypes.object.isRequired,
   removeFish: PropTypes.func.isRequired,
   updateFish: PropTypes.func.isRequired
 };
