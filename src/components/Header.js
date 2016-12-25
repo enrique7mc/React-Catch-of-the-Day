@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Header = ({ tagline }) => (
   <header className="top">
@@ -13,5 +13,9 @@ const Header = ({ tagline }) => (
     <h3 className="tagline"><span>{tagline}</span></h3>
   </header>
 );
+
+Header.propTypes = {
+  tagline: PropTypes.string.isRequired
+};
 
 export default Header;

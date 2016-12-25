@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
@@ -116,5 +116,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  params: PropTypes.object
+};
 
 export default App;
