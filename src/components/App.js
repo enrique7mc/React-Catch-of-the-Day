@@ -2,13 +2,14 @@ import React, { PropTypes } from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
-import Fish from './Fish';
+import Fish from './Fish'
 import sampleFishes from '../sample-fishes';
-import base from '../base';
+import base from '../base'
 
-class App extends React.Component {
-  constructor() {
-    super();
+class App extends React.Component
+{
+  constructor   () {
+    super    ();
     this.addFish = this.addFish.bind(this);
     this.updateFish = this.updateFish.bind(this);
     this.removeFish = this.removeFish.bind(this);
@@ -37,8 +38,8 @@ class App extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    base.removeBinding(this.ref);
+  componentWillUnmount () {
+    base.removeBinding(this.ref, 1);
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -46,7 +47,7 @@ class App extends React.Component {
       JSON.stringify(nextState.order));
   }
 
-  addFish(fish) {
+  addFish (fish, dfd) {
     // update state
     const fishes = {...this.state.fishes};
     fishes[`fish-${Date.now()}`] = fish;
@@ -111,7 +112,8 @@ class App extends React.Component {
           updateFish={this.updateFish}
           removeFish={this.removeFish}
           loadSamples={this.loadSamples}
-          fishes={this.state.fishes} />
+          fishes={this.state.fishes}
+          storeId={this.props.params.storeId} />
       </div>
     );
   }
